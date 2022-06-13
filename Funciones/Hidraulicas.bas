@@ -1,6 +1,6 @@
 Attribute VB_Name = "Hidraulicas"
 Option Private Module
-'ULTIMA MODIFICACI覰 03 DE FEBRERO DE 2014
+'ULTIMA MODIFICACI脫N 03 DE FEBRERO DE 2014
 
 
 
@@ -19,30 +19,10 @@ Option Private Module
 
 Option Explicit
 
-Sub LoadFunctionDescriptions()
-'Register the functions in the range
-    With New CUdfHelper
-        .ProcessRange shFuncList.Range("FuncList"), bRegister:=True
-    End With
-End Sub
-Sub UnLoadFunctionDescriptions()
-'UnRegister the functions in the range
-    With New CUdfHelper
-        .ProcessRange shFuncList.Range("FuncList"), bRegister:=False
-    End With
-End Sub
 
-Private Sub foo()
-    Dim v
-    v = Application.RegisteredFunctions
-    Stop                                     'open Locals Window to view
-    'i've noted that when ATP is loaded
-    '1st of 'our' functions appears in the top
-    'while the rest appear the end... hmm???
-End Sub
 
 Function PerdidaX2(gasto, diametro, longitud As Double) As Double
-'Determina la perdida por fricci髇 en la tuberia con PVC
+'Determina la perdida por fricci贸n en la tuberia con PVC
 Dim Coefp, DIp, Qp, Longp, Hfp As Double
     Qp = gasto / 1000
     Longp = longitud
@@ -123,7 +103,7 @@ Dim N, f1, Rs As Double
     End If
 End Function
 Function Qminimoxseccion(area As Double, ETc As Double, Trd As Double)
-'Calcula el caudal minimo necesario para regar una secci髇 de riego en un area total
+'Calcula el caudal minimo necesario para regar una secci贸n de riego en un area total
 area = area * 10000
 ETc = ETc / 1000
 Qminimoxseccion = (area * ETc) / (Trd * 3.6)
@@ -153,8 +133,8 @@ Function Qtotalreq(lh As Double, area As Double)
     Qtotalreq = (lh * area) / 3.6
 End Function
 Function dinterno(diametro As Double) As Double
-'Estima el diametro interno en funci髇 del diametro nominal y redondea
-'al diametro siguiente en funci髇 del valor
+'Estima el diametro interno en funci贸n del diametro nominal y redondea
+'al diametro siguiente en funci贸n del valor
 Dim DN(16) As Double
     DN(1) = Workbooks("RegisterU2DF7.xlam").Worksheets("Metodo").Range("A4").Value
     DN(2) = Workbooks("RegisterU2DF7.xlam").Worksheets("Metodo").Range("A5").Value
@@ -210,8 +190,8 @@ Select Case diametro
 End Select
 End Function
 Function Dcalculado(caudal As Double)
-'Sugiere el valor del diametro de un tubo en funci髇 del caudal a pasar por el
-'no toma en cuenta para nada el valor de la fricci髇
+'Sugiere el valor del diametro de un tubo en funci贸n del caudal a pasar por el
+'no toma en cuenta para nada el valor de la fricci贸n
 Dim DiaMat As Double
 caudal = caudal / 1000
 DiaMat = (Sqr(caudal)) * 0.9213 * 1000
@@ -253,8 +233,8 @@ End Select
 End Function
 
 Function TirNormal(gasto, Ancho, Pendiente, Talud, Manning As Double)
-'Sugiere el valor del diametro de un tubo en funci髇 del caudal a pasar por el
-'no toma en cuenta para nada el valor de la fricci髇
+'Sugiere el valor del diametro de un tubo en funci贸n del caudal a pasar por el
+'no toma en cuenta para nada el valor de la fricci贸n
         Dim yn, pn1, an, Pn, RH, pn2, pn3, pn4, ptn, Theta, So As Double
         Theta = Math.Atn(Pendiente)
         So = Pendiente
@@ -466,7 +446,7 @@ Function PotenciaBomba(gasto, Presion, EfiBomba, EfiMotor As Double)
 End Function
 
 Function perdida(gasto, diametro, longitud As Double)
-'Determina la perdida por fricci髇 en la tuberia con PVC
+'Determina la perdida por fricci贸n en la tuberia con PVC
 Dim Coefp, DIp, Qp, Longp, Hfp, Rey, fdw As Double
     Qp = gasto / 1000
     Longp = longitud
@@ -499,7 +479,7 @@ Dim Coefp, DIp, Qp, Longp, Hfp, Rey, fdw As Double
     perdida = Hfp
     
 End Function
-'ULTIMA MODIFICACI覰 12 DE septiembre DE 2014 by sergio ivan jimenez jimenez
+'ULTIMA MODIFICACI脫N 12 DE septiembre DE 2014 by sergio ivan jimenez jimenez
 Public Function GalonphLitroph(GPH As Double) As Double
 'CONVIERTE LAS UNIDADES DE GALONES POR HORA A LITROS POR HORA
 If GPH = 0 Then
@@ -633,22 +613,22 @@ Public Function Windspeed(Velocidad, altura As Double)
     Windspeed = Velocidad * 4.87 / Math.Log(67.8 * altura - 5.42)
 End Function
 Function aDiaJulianoo(Fecha As Long) As Integer
-' verificar cuantos dias julianos tiene el a駉
-Dim a駉 As Integer
+' verificar cuantos dias julianos tiene el a帽o
+Dim a帽o As Integer
 Dim dia As Integer
 Dim DiaJ As String
 
-a駉 = Year(Fecha)
-dia = DateDiff("d", DateSerial(a駉, 1, 0), Fecha)
+a帽o = Year(Fecha)
+dia = DateDiff("d", DateSerial(a帽o, 1, 0), Fecha)
 
-If Fecha = DateSerial(a駉, 2, 29) Then
+If Fecha = DateSerial(a帽o, 2, 29) Then
     dia = 59
         DiaJ = Format(dia, "000")
     aDiaJulianoo = DiaJ
 
 End If
 
-If Fecha = DateSerial(a駉, 3, 1) Then
+If Fecha = DateSerial(a帽o, 3, 1) Then
 
     dia = 60
     DiaJ = Format(dia, "000")
