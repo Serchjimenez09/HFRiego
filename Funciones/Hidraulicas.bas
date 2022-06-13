@@ -1,21 +1,19 @@
 Attribute VB_Name = "Hidraulicas"
 Option Private Module
-'ULTIMA MODIFICACIÓN 03 DE FEBRERO DE 2014
+'ULTIMA MODIFICACIÓN FEBRERO DE 2022
 
 
 
 ' *********************************************************************
-' Module  : MExample
-' Purpose : Demonstrates the use of CUdfHelper to load and unload
-'           function descriptions from a worksheet.
+    ' Module  : HFriego
+    ' Purpose : Calculo hidráulico en tuberias ciegas y con salidas multiples.
 '
-' Notes   : Copy these routines to your own workbook
-'           and call them from Workbook_Open/Close
+' Notes   : 
 ' *********************************************************************
 
 ' ---------------------------------------------------------------------
 ' Date        Developer                   Action
-' 2006-02-23  Jurgen Volkerink            Created
+    ' 2012  Sergio Jiménez          Created
 
 Option Explicit
 
