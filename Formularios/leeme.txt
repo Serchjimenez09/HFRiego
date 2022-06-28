@@ -1,1 +1,1 @@
-Se presentan todos los formularios, debe tomar en cuenta que muchas de las funciones de los formularios estan ligados al archivo ajustes "RegisterU2DF7.XLAM" que no es mas que un archivo excel que se encuetran en la carpeta principal de este repositorio
+Se presentan todos los formularios de HFRiego, debe tomar en cuenta que muchas de las funciones de los formularios estan ligados al archivo ajustes "RegisterU2DF7.XLAM" que no es mas que un archivo excel que se encuetran en la carpeta principal de este repositorio
