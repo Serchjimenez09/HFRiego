@@ -1,1 +1,5 @@
+Dentro de este directorio se encuentran los archivos:
+Hidraulicas.bas: Son funciones que están dentro de HFriego como, por ejemplo: “Perdida de carga por fricción”, “Lamina horaria”, “Factor de salidas múltiples”. 
+GENERAL2.bas: Es un archivo que sirve para llamar las funciones y formularios que están en la pestaña de “HFRiego”, cada botón de HFRiego tiene un ID para ser llamado, este ID se declara en el XML. Se enlazan en conjunto con el archivo XML del archivo “RegisterU2DF7”. 
+ThisWorkbook.cls: Son funciones que deben estar en “ThisWorkbook” del archivo Excel donde está contenido la pestaña “HFRiego”, estas funciones se usan en diferentes formularios, son funciones como por ejemplo: para que el usuario ingrese solo valores numéricos o bien Numero de Reynolds, coeficiente de friccion, entre otros. 
 
