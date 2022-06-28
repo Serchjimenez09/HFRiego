@@ -1,0 +1,93 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon>
+		<tabs>
+	<tab id= "HFRiego" label= "HF RIEGO" insertAfterMso="TabView" keytip="H" >
+					<group id= "HFETO" label="Evapotranspiración" image="sun">
+				
+<menu id="Menu_ETo" label="Evapotranspiración" supertip="Calcula la Evapotranspiración de Referencia (ETo)" image="sun" keytip="A" size="large">
+				<button id="ETOPM" label="ETo FAO-Penman-Monteith (PM)" image="formula2" onAction="GENERAL2.llamarETOPM" screentip="Evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) con el Metodo de FAO-Penman-Monteith" keytip="A" />
+				<button id="ETOPMDL" label="ETo FAO-PM (datos limitados)" image="formula2" onAction="GENERAL2.llamarETOPMDL" screentip="Evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) diaria con el Metodo de FAO-Penman-Monteith con datos climaticos limitados" keytip="A" />
+				<button id="ETOHS" label="ETo Hargreaves y Samani" image="formula2" onAction="GENERAL2.llamarETOHS" screentip="Evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) diaria con el Metodo de Hargreaves y Samani" keytip="B" />
+				<button id="ETOTANQUE" label="ETo Tanque tipo A(Formulario)" image="formula2" onAction="GENERAL2.llamarETO" screentip="Evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) diaria con el Metodo del Tanque Evaporimetro Tipo A" keytip="C" />
+				<button id="ETOTANQUEA" label="ETo Tanque tipo A(Formula)" image="formula2" onAction="GENERAL2.llamarETO2" screentip="Formula para estimar evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) diaria con el Metodo del Tanque Evaporimetro Tipo A" keytip="D" />
+				<button id="ETOPT" label="ETo Priestley-Taylor" image="formula2" onAction="GENERAL2.llamarETOPT" screentip="Evapotranspiración de Referencia" supertip="Calcula la Evapotranspiración de Referencia (ETo) diaria con la formula de Priestley-Taylor" keytip="E" />
+					<menuSeparator id="separator" />
+				<button id="diaj" label="Día Juliano" image="formula2" onAction="GENERAL2.llamarJuliano" screentip="Día juliano" supertip="Determina el Día juliano" keytip="F" />
+				<button id="velj" label="Velocidad del viento a 2m" image="formula2" onAction="GENERAL2.llamarVelocidad" screentip="Velocidad viento" supertip="Convierte la velocidad del viento a 2m de altura" keytip="G" />
+				<button id="REj" label="Radiación Extraterrestre" image="formula2" onAction="GENERAL2.llamarRE" screentip="Radiación" supertip="Determina la radiacion extraterrestre de un punto (en una latitud establecida)" keytip="G" />
+				<button id="Rsj" label="Radiación Solar con cobertura de nubes" image="formula2" onAction="GENERAL2.llamarRs" screentip="Radiación" supertip="Calcula la radiación solar diaria en MJ/m2*Dia e base a la cobertura media de nubes. " keytip="G" />
+					<menuSeparator id="separatorHE" />
+				<button id="RETrocio" label="Presión de Vapor actual con Temp Rocio" image="formula2" onAction="GENERAL2.llamarVPA" screentip="Radiación" supertip="Determina la presion actual de vapor (kPa) con la temperatura del punto de rocio" keytip="G" />
+				<button id="HRj" label="Humedad especifica a Presión de Vapor actual" image="formula2" onAction="GENERAL2.llamarHR" screentip="Radiación" supertip="Calcula la presión actual de vapor (kPa) en base a la humedad especifica (kg/kg)" keytip="G" />
+
+				</menu>
+					
+					<button id="KC" label="Coeficiente de Cultivo" image="Coeficiente" onAction="GENERAL2.llamarKC" size="large" screentip="Coeficiente de cultivo" supertip="Calcula el coeficiente de cultivo segun la FAO del boletin 56" keytip="B" />
+					<button id="PE" label="Precipitación Efectiva" image="Rain" onAction="GENERAL2.llamarPE" size="large" screentip="Percipitación Efectiva" supertip="Calcula la precipitación efectiva" keytip="C" />
+				</group>
+				
+				<group id= "HFAGRONOMICO" label="Agronómico" image="Girasol" >
+					<button id="AGROLAMINA" label="Lámina Horaria" image="G1" onAction="GENERAL2.llamarLAMINA" size="normal" screentip="Lámina de riego" supertip="Fórmula que calcula La lamina Horaria de un sistema de riego localizado" keytip="D" />
+					<button id="QSISTEMAA" label="Gasto del sistema" image="Water" onAction="GENERAL2.llamarQSISTEMA" size="normal" screentip="Gasto o Caudal del sistema" supertip="Fórmula que calcula el caudal necesario de un sistema de riego" keytip="E" />
+					<button id="QMINIMO" label="Gasto min. por sección" image="Min" onAction="GENERAL2.llamarQMINIMO" size="normal" screentip="Gasto o Caudal mímino" supertip="Formula que calcula el gasto minimo que se requiere en un sistema de riego" keytip="F" />
+					<button id="DAGRONOMICO" label="Diseño Agronomico" image="Girasol" onAction="GENERAL2.llamaAGRONOMICO" size="large" screentip="Diseño Agronomico" supertip="Calcula los parámetros del diseño agronómico de un sistema de riego localizado" keytip="G" />
+				</group>
+
+				<group id= "HFLATERAL" label="Diseño Hidráulico" image="Ciega" >
+					<menu id="FuncionesH" label="Funciones" supertip="Funciones sobre el diseño hidraulico en tuberias" image="formula" keytip="U" size="large">
+					<button id="FSALIDAS" label="FSM Christiansen" image="F1" onAction="GENERAL2.llamarSALIDASM" screentip="Factor de salidas multiples de christiansen" supertip="Fórmula que calcula el factor de salidas múltiples de christiansen, se utiliza cuando la distancia a la primera salida es igual al espaciamiento entre salidas consecutivas" keytip="A" />
+					<button id="FSALIDAS2" label="FSM Jensen y Fratini" image="F2" onAction="GENERAL2.llamarSALIDAS2" screentip="Factor de salidas multiples de Jensen y Fratini" supertip="Fórmula que calcula el factor de salidas múltiples de Jensen y Fratini, se utiliza cuando la distancia a la primera salida es igual a la mitad del espaciamiento entre salidas consecutivas" keytip="B" />
+					<button id="FSALIDAS3" label="FSM Scaloppi"  image="f3" onAction="GENERAL2.llamarSALIDASM3" screentip="Factor de salidas multiples Scaloppi" supertip="Fórmula que calcula el factor de salidas múltiples de Scalopi, se utiliza cuando la distancia a la primera puede ser cualquier distancia" keytip="C" /> 
+					<menuSeparator id="separator2" />
+					<button id="lreG" label="Longitud Máxima Regante"  image="formula2" onAction="GENERAL2.llamarLM"    screentip="Longitud Máxima Regante" supertip="Determina la longitud maáxima de la linea regante" keytip="D" />
+					<button id="Friccion" label="Pérdida de carga por fricción"  image="formula2" onAction="GENERAL2.llamarPCF"    screentip="Pérdida de carga por fricción" supertip="Estima la Pérdida de carga por fricción en tuberias ciegas o simples" keytip="E" />
+					<button id="Velocidad" label="Velocidad de flujo"  image="formula2" onAction="GENERAL2.llamarVeflujo"    screentip="Velocidad" supertip="Determina la velocidad de flujo en una tuberia" keytip="F" />
+					<button id="Reylonds" label="Numero de Reynolds"  image="formula2" onAction="GENERAL2.llamarReynolds"    screentip="Numero de Reynolds" supertip="Determina el número de renolds" keytip="G" />
+					<button id="CDW" label="Coeficiente de fricción D-W"  image="formula2" onAction="GENERAL2.llamarCoeficienteF"    screentip="Coeficiente de fricción con Colebrook-White " supertip="Determina coeficiente de fricción con la ecuación de Colebrook-White" keytip="H" />
+<button id="CSJ" label="Coeficiente de fricción con Swamee y Jain"  image="formula2" onAction="GENERAL2.llamarCoeficienteSJ"    screentip="Coeficiente de fricción de Darcy-Weisbach con Swamee y Jain" supertip="Determina coeficiente de fricción con la ecuación de Swamee y Jain" keytip="S" />
+
+					<menuSeparator id="separator22" />
+					<button id="Dinterno" label="Diámetro Interno"  image="formula2" onAction="GENERAL2.llamarInterno"  screentip="Diámetro Interno" supertip="Busca el diámetro interno de un diámetro comercial dentro de los datos ingresados en ajuste" keytip="E" />
+
+				</menu>
+	
+					<button id="LLateral" label="Tubería con salidas múltiples" image="REGA" onAction="GENERAL2.llamarLATERAL" size="large" screentip="Longitud Máxima de una tuberia con salidas multiples(SM)" supertip="Calcula la longitud maxima de una tuberia con salidas múltiples de servicio mixto (un solo diametro)" keytip="K" />
+					<button id="BPerfilESREc" label="Tubería - Telescopeado" image="TELES" onAction="GENERAL2.llamarTeles" size="large" screentip="DISEÑO HIDRÁULICO DE UNA TUBERIA TELESCOPICA CON SALIDAS MULTIPLES" supertip="Cálcula los diametros de una tubería Secundaria o portalateral en un sistema de riego localizado o tubería lateral en sistema de riego por aspersión. Una tubería Telescopica esta constituidas por dos o más tramos de tubería con diámetro de diferente magnitud o tipo de material" keytip="T" />
+					<button id="BPerfilGVTRa" label="Tubería Ciega" image="Ciega" onAction="GENERAL2.HPrincipal" size="large" screentip="Pérdida de carga en tuberias ciegas o simples" supertip="Formulario para estimar la pérdida de carga por fricción en tuberias ciegas o simples"  keytip="L" />	
+					<button id="haccesorios" label="Accesorios" image="PipeAc" onAction="GENERAL2.llamarACCESORIOS" size="large" screentip= "Accesorios" supertip="calcula la pérdida de carga por fricción en accesorios" keytip="M"/>
+
+				</group>
+	
+				<group id= "HFotros" label="Otros" image="Tractor1">	
+					<button id="RR" label="Textura" image="Suelo" onAction="GENERAL2.llamarTEXTURA" size="normal" screentip="Textura del suelo" supertip="Fórmula que calcula la textura de un suelo en base al porcentaje de Arena, Limo y Arcilla" keytip="X" />
+					<button id="Bombeo" label="Bombeo" image="bomba1" onAction="GENERAL2.llamarBOMBEO" size="normal" screentip="Textura del suelo" supertip="Fórmula que Cálculá la potencia de una bomba" keytip="P" />		
+					<button id="hzanja" label="Zanja" image="Tractor1" onAction="GENERAL2.llamarZANJA" size="large" screentip="Zanja" supertip="Cálculo de Volumenes de Excavación y relleno" keytip="R" />
+
+
+<menu id="Menu_Error" label="Parametros de Error" supertip="Parámetros de Error como la Raiz del cuadrado medio del error (RMSE), Error medio , desviación estandar del error, Índice de concordancia de Willmott " image="error" keytip="A" size="large">
+				<button id="ErrorME" label="Error Medio" image="formula2" onAction="GENERAL2.llamarME" screentip="Error Medio" supertip="Determina el error medio de dos conjuntos de datos, uno medido u observado y otro estimado" keytip="F" />
+				<button id="ErrorRMSE" label="Raiz del cuadrado medio del error (RMSE)" image="formula2" onAction="GENERAL2.llamarRMSE" screentip="Raiz del cuadrado medio del error (RMSE)" supertip="Determina la Raíz del cuadrado medio del error de dos conjuntos de datos, uno medido u observado y otro estimado" keytip="G" />
+				<button id="ErrorDSE" label="Desviación estandar del error" image="formula2" onAction="GENERAL2.llamarSDE" screentip="Desviación estandar del error" supertip="Determina la desviación estándar de los errores de dos conjuntos de datos" keytip="G" />
+				<button id="ErrorD" label="Índice de concordancia de Willmott (d)" image="formula2" onAction="GENERAL2.llamarDW" screentip="Índice de concordancia de Willmott (d)" supertip="Determina Índice de concordancia de Willmott entre dos conjuntos de datos" keytip="G" />
+
+
+</menu>
+				</group>
+				<group id= "HFCONFIGURACION" label="Configuración">
+				<button id="Ccompuestos2" label="Configuración" image="Configuracion" onAction="GENERAL2.llamarCONFIGURACION" size="large" screentip="Configuración General" keytip="O" />
+				</group>
+
+				<group id= "HFAYUDA" label="Ayuda" image="Help" keytip="Y" >
+				<menu id="Menu_Help" label="Ayuda" supertip="Despliega la ayuda HFRiego" image="Help" keytip="H" size="large">
+				<button id="ayuda2" label="Ayuda Rapida" image="icons8-info-64" onAction="GENERAL2.llamarAyuda" />
+				<button id="AcercaDE2" label="Acerca de HFRiego" image="icons8-info-64" onAction="GENERAL2.llamarAcercaDe" />
+				<menuSeparator id="separator3" />
+				<button id="HFacil" label="www.hidraulicafacil.com" onAction="GENERAL2.llamarHFacil" />
+				</menu>
+				</group>
+
+
+			</tab>
+		</tabs>	
+</ribbon>
+</customUI>
